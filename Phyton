@@ -1,0 +1,142 @@
+#Cree una funcion "suma" que imprima la suma de dos valores solo si son pares, de lo conrario imprimirá que no son pares
+def suma(a, b):
+    while a % 2 = 0 or b % 2 = 0:
+        print("Ambos números deben ser pares. Por favor, inténtelo de nuevo.")
+        a = int(input("Ingrese un número par: "))
+        b = int(input("Ingrese otro número par: "))
+    
+    resultado = a + b
+    print(f"La suma de {a} y {b} es {resultado}.")
+
+#Cree una funcion "resta" que imprima la resta de dos valores solo si son múltiplos de 5, de lo conrario imprimirá que no son impares
+    def resta(a, b):
+    while a % 5 = 0 or b % 5 = 0:
+        print("Ambos números deben ser múltiplos de 5. Por favor, inténtelo de nuevo.")
+        a = int(input("Ingrese un número múltiplo de 5: "))
+        b = int(input("Ingrese otro número múltiplo de 5: "))
+    
+    resultado = a - b
+    print(f"La resta de {a} y {b} es {resultado}.")
+
+#Cree una funcion "division" que imprima la división de dos valores solo si el resultado no tiene reciduo, de lo conrario imprimirá que no es una división exacta
+def division(a, b):
+    while a % b != 0:
+        print("La división no es exacta. Por favor, inténtelo de nuevo.")
+        a = int(input("Ingrese el numerador: "))
+        b = int(input("Ingrese el denominador: "))
+    
+    resultado = a / b
+    print(f"La división de {a} entre {b} es {resultado}.")
+
+#Cree una funcion "multiplicacion" que imprima la multiplicación de dos valores solo si son mayores a 10, de lo conrario imprimirá que no son mayores a 10
+def multiplicacion(a, b):
+    while a <= 10 or b <= 10:
+        print("Ambos números deben ser mayores a 10. Por favor, inténtelo de nuevo.")
+        a = int(input("Ingrese un número mayor a 10: "))
+        b = int(input("Ingrese otro número mayor a 10: "))
+    
+    resultado = a * b
+    print(f"La multiplicación de {a} y {b} es {resultado}.")
+#explique: 
+#      1. ¿Qué es lo que hace el código en un comentario antes de modificarlo?
+El código contiene un comentario de documentación en formato de Docstring que describe la función "printMenu". La información que proporciona el comentario incluye el nombre del autor, la fecha de creación, una descripción de la función y una sección de parámetros.
+#      2. ¿Cuál es la sintaxis de un while?
+while (condición):
+    #código a ejecutar mientras la condición sea verdadera
+El bloque de código dentro del while se ejecutará repetidamente mientras la condición especificada sea verdadera.
+#      3. ¿Exite swhitch en python?
+Python no tiene un comando switch incorporado, pero se puede simular con una serie de declaraciones if/elif.
+#      4. ¿Qué es un elif?
+ se usa en Python para agregar múltiples condiciones a una estructura if.
+#      5. ¿Qué función de se ejecuta al correr el script?
+La función que se ejecuta al correr el script es "main". Primero se verifica si el script se está ejecutando directamente
+y luego se llama a la función "main" para comenzar la ejecución del programa. La función "main" utiliza la función "printMenu" para mostrar un menú y 
+solicitar la selección del usuario. Luego, dependiendo de la opción seleccionada, se imprime una respuesta y se solicita que el usuario presione
+Enter para continuar. El bucle se repite hasta que se selecciona la opción "4", momento en el cual se imprime "excelente" y el programa termina.
+
+#Modifique el siguien código para que mande a llamar la función suma, resta, multiplicación y división y agregue un mecanismo para preguntar si se deasea volver al menú principal.
+import os
+
+def printMenu():
+    ''' printMenu
+    Author: <nombre del autor>
+    Date: <fecha>
+    Description: Descripción de los tipos de datos en python
+    [Param: [nombre] [tipo] ]
+    '''
+    os.system('cls')
+    print("Bienvenido al menú seleccione una opción \n\n")
+    print("\t1) Suma\n")
+    print("\t2) Resta\n")
+    print("\t3) Multiplicación\n")
+    print("\t4) División\n")
+    print("\t5) Salir\n")
+    option = input()
+    if(option):
+        return int(option)
+    else:
+        return 0
+
+
+def suma():
+    a = int(input("Ingrese un número par: "))
+    b = int(input("Ingrese otro número par: "))
+    while a % 2 != 0 or b % 2 != 0:
+        print("Ambos números deben ser pares. Por favor, inténtelo de nuevo.")
+        a = int(input("Ingrese un número par: "))
+        b = int(input("Ingrese otro número par: "))
+    resultado = a + b
+    print(f"La suma de {a} y {b} es {resultado}.")
+
+
+def resta():
+    a = int(input("Ingrese un número múltiplo de 5: "))
+    b = int(input("Ingrese otro número múltiplo de 5: "))
+    while a % 5 != 0 or b % 5 != 0:
+        print("Ambos números deben ser múltiplos de 5. Por favor, inténtelo de nuevo.")
+        a = int(input("Ingrese un número múltiplo de 5: "))
+        b = int(input("Ingrese otro número múltiplo de 5: "))
+    resultado = a - b
+    print(f"La resta de {a} y {b} es {resultado}.")
+
+
+def division():
+    a = int(input("Ingrese el numerador: "))
+    b = int(input("Ingrese el denominador: "))
+    while a % b != 0:
+        print("La división no es exacta. Por favor, inténtelo de nuevo.")
+        a = int(input("Ingrese el numerador: "))
+        b = int(input("Ingrese el denominador: "))
+    resultado = a / b
+    print(f"La división de {a} entre {b} es {resultado}.")
+
+
+def multiplicacion():
+    a = int(input("Ingrese un número mayor a 10: "))
+    b = int(input("Ingrese otro número mayor a 10: "))
+    while a <= 10 or b <= 10:
+        print("Ambos números deben ser mayores a 10. Por favor, inténtelo de nuevo.")
+        a = int(input("Ingrese un número mayor a 10: "))
+        b = int(input("Ingrese otro número mayor a 10: "))
+    resultado = a * b
+    print(f"La multiplicación de {a} y {b} es {resultado}.")
+
+
+def main():
+    flag = 0
+    inutil =''
+    while(flag!=5):
+        flag = printMenu()
+        
+        if (flag==1):
+            suma()
+        elif (flag==2):
+            resta()
+        elif (flag==3):
+            multiplicacion()
+        elif (flag==4):
+            division()
+        elif (flag==5):
+            print("\nS
+
+
